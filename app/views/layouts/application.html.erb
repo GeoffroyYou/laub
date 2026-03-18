@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Laub Cafe · Coffee shop in Yunnan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Rails assets -->
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+      <div class="nav-container">
+        <%= link_to root_path, class: "nav-logo" do %>
+        <% end %>
+
+        <button class="menu-button" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><%= link_to "Home", root_path, class: ("active" if current_page?(root_path)) %></li>
+          <li><a href="#about">The Story</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Visit</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column footer-brand-column">
+            <%= image_tag "Logo-Laub-Cafe.JPG", alt: "Laub Cafe", class: "footer-logo" %>
+            <p class="footer-about">A sanctuary in the Yunnan forest where coffee and nature become one.</p>
+          </div>
+
+          <div class="footer-column">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#about">The story</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">WeChat</a></li>
+              <li><a href="#">Douyin</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Visit</h4>
+            <ul>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#">Directions</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Laub Cafe · Crafted in the mountains of Yunnan</p>
+
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

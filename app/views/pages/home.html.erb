@@ -1,0 +1,211 @@
+<!-- app/views/pages/home.html.erb -->
+
+<!-- HERO SECTION -->
+<section id="home" class="hero" aria-label="Hero Section">
+  <div class="hero-media">
+    <%= image_tag "sunset.JPG", alt: "Forest canopy at sunset", class: "hero-image" %>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content container">
+    <div class="hero-text">
+      <span class="hero-sup">Laub Cafe</span>
+      <h1 class="hero-title">
+        <span class="hero-title-line">Where the</span>
+        <span class="hero-title-line">forest <i>lives</i></span>
+        <span class="hero-title-line">in every cup</span>
+      </h1>
+      <p class="hero-description">
+        In the ancient forests of Yunnan, coffee becomes a quiet conversation with nature.
+      </p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">
+          <span>Begin the journey</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline">Find us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll"><span class="scroll-line"></span></div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about container" aria-label="About Section">
+  <div class="about-grid">
+    <div class="about-image-container">
+      <div class="about-image-main">
+        <%= image_tag "Store.JPG", alt: "Our cabin in the forest" %>
+      </div>
+      <div class="about-image-accent"></div>
+      <div class="about-image-accent2"></div>
+    </div>
+
+    <div class="about-content">
+      <span class="about-label">Olivia's story</span>
+      <h2 class="about-title">A coffee shop,<br>a dream,<br><i>the forest</i></h2>
+      <div class="about-text">
+        <p>
+          My name is Olivia. I come from Beijing.
+          In 2026, I arrived in Huimin Town and founded Laub Cafe, a place shaped by the mountains and a slower way of living.
+        </p>
+        <p>
+          We work with local farmers whose families have cultivated coffee here for generations, using slow, natural, and deeply rooted methods.
+          Every bean carries the character of these mountains. Every cup holds a trace of the forest.
+        </p>
+      </div>
+      <div class="about-signature">
+        <span class="signature-line"></span>
+        <span class="signature-text">Olivia · Founder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience" class="experience container" aria-label="Experience Section">
+  <div class="experience-grid">
+    <div class="experience-content">
+      <span class="experience-label">The experience</span>
+      <h2 class="experience-title">More than<br>just coffee</h2>
+      <p class="experience-text">
+        Enter a place where time slows. Birdsong drifts through the trees, wind moves softly through ancient branches, and the quiet rhythm of coffee fills the air. Here, every cup becomes a moment of peace.
+      </p>
+
+      <div class="experience-stats">
+        <div class="stat">
+          <span class="stat-number">40+</span>
+          <span class="stat-label">Local farmers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Sustainable</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">2026</span>
+          <span class="stat-label">Founded</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="experience-image">
+      <%= image_tag "experience.jpg", alt: "Coffee ceremony in forest" %>
+      <span class="experience-image-caption">Morning ritual</span>
+    </div>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section id="menu" class="menu container" aria-label="Menu Section">
+  <header class="menu-header">
+    <span class="menu-label">The menu</span>
+    <h2 class="menu-title">Crafted by nature</h2>
+    <p class="menu-description">Each drink carries the essence of Yunnan’s mist-covered mountains.</p>
+  </header>
+
+  <div class="menu-grid">
+    <% menu_items = [
+      {name: "Forest Espresso", price: "¥36", desc: "Single origin Yunnan beans from 1,500m elevation. Dark chocolate, wild berries, hint of cedar.", tag: "Pu'er region", badge: "Signature", image: "espresso.jpg"},
+      {name: "Morning Latte", price: "¥35", desc: "Silky smooth with notes of honey and almond. A gentle forest awakening.", tag: "House favorite", image: "latte.jpg"},
+      {name: "Canopy Cappuccino", price: "¥25", desc: "Rich layers of foam and espresso, like the forest canopy above.", tag: "Classic", image: "cappuccino.jpg"},
+      {name: "Wild Berry Mocha", price: "¥30", desc: "Dark chocolate with foraged Yunnan berries and a touch of cinnamon.", tag: "Seasonal", badge: "New", image: "mocha.jpg"},
+      {name: "Mountain Pour Over", price: "¥42", desc: "Hand-brewed to highlight delicate floral notes of jasmine and honeysuckle.", tag: "Single origin", badge: "Artisan", image: "pour-over.jpg"},
+      {name: "Forest Cold Brew", price: "¥38", desc: "12-hour slow steeped. Smooth, chocolatey, with zero bitterness.", tag: "Refreshing", image: "cold-brew.jpg"}
+    ] %>
+
+    <% menu_items.each do |item| %>
+      <article class="menu-card">
+        <div class="menu-card-image">
+          <%= image_tag item[:image], alt: "#{item[:name]} - #{item[:desc]}" %>
+          <% if item[:badge] %>
+            <span class="menu-card-badge"><%= item[:badge] %></span>
+          <% end %>
+        </div>
+        <div class="menu-card-content">
+          <div class="menu-card-header">
+            <h3 class="menu-card-name"><%= item[:name] %></h3>
+            <span class="menu-card-price"><%= item[:price] %></span>
+          </div>
+          <p class="menu-card-desc"><%= item[:desc] %></p>
+          <span class="menu-card-tag"><%= item[:tag] %></span>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="gallery container" aria-label="Gallery Section">
+  <header class="gallery-header">
+    <span class="gallery-label">Moments</span>
+    <h2 class="gallery-title">Gallery - The Coffee Shop</h2>
+  </header>
+
+  <div class="gallery-grid">
+    <% gallery_items = [
+      {image: "gallery-1.jpg", alt: "Morning light", title: "Morning Glow", desc: "Embrace the first light of the day", large: true},
+      {image: "gallery-2.jpg", alt: "Pour-over coffee in cozy corner", title: "Your cozy corner", desc: "Relax, sip, and unwind"},
+      {image: "gallery-3.jpg", alt: "Forest seating", title: "Golden hour", desc: "Catch the sunset over the valley"},
+      {image: "gallery-4.jpg", alt: "Coffee beans", title: "Fresh harvest", desc: "Handpicked from local farms"},
+      {image: "gallery-5.jpg", alt: "Big window", title: "The view", desc: "Nature's masterpiece"},
+      {image: "gallery-6.jpg", alt: "Sunset", title: "Calm", desc: "A quiet moment in nature", large: true}
+    ] %>
+
+    <% gallery_items.each do |item| %>
+      <figure class="gallery-item <%= 'gallery-item-large' if item[:large] %>">
+        <%= image_tag item[:image], alt: item[:alt] %>
+        <figcaption class="gallery-overlay">
+          <h3><%= item[:title] %></h3>
+          <p><%= item[:desc] %></p>
+        </figcaption>
+      </figure>
+    <% end %>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact container" aria-label="Contact Section">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <span class="contact-label">Visit us</span>
+      <h2 class="contact-title">Find your way to Laub Cafe</h2>
+      <p class="contact-desc">Nestled within the ancient tea forests of Jingmai Mountain, Laub awaits. Come find us.</p>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <i class="fas fa-map-pin contact-icon"></i>
+          <div>
+            <h4>Location</h4>
+            <p>Lancang Lahu Autonomous Country, Huimin Town, Pu'er City<br>Yunnan, China</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <i class="fas fa-clock contact-icon"></i>
+          <div>
+            <h4>Hours</h4>
+            <p>Tuesday – Sunday: 7am – 6pm<br>Monday: Closed (forest hike day)</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <i class="fas fa-phone contact-icon"></i>
+          <div>
+            <h4>Contact</h4>
+            <p>+86 (131) 1234-5678<br>info@laubcafe.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <%= form_with url: contact_path, method: :post, local: true do |f| %>
+        <%= f.text_field :name, placeholder: "Your name", class: "form-input", required: true %>
+        <%= f.email_field :email, placeholder: "Your email", class: "form-input", required: true %>
+        <%= f.text_area :message, placeholder: "Your message", class: "form-input", rows: 4, required: true %>
+        <%= f.submit "Send message", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</section>
