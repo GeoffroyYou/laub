@@ -384,3 +384,10 @@ lightboxStyle.textContent = `
   }
 `;
 document.head.appendChild(lightboxStyle);
+
+const menuButton = document.querySelector('.menu-button');
+const navMenu = document.querySelector('.nav-menu');
+
+menuButton.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});

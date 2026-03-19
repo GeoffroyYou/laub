@@ -1,4 +1,4 @@
-/* =========================== GLOBAL STYLES =========================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -730,7 +730,7 @@ h1, h2, h3, h4, h5 {
 .menu-card-image {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -1372,4 +1372,39 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-/* Remove duplicate !important rules at the end - they're not needed */
+.nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 31, 18, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem 0;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .menu-card-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-card-image {
+    height: 180px;
+  }
+}
+
+.menu-card-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .menu-card-content {
+    padding: 1rem;
+  }
+}
