@@ -14,11 +14,11 @@
         <span class="hero-title-line">in every cup</span>
       </h1>
       <p class="hero-description">
-        In the ancient mountains of Yunnan, each cup of coffee becomes a quiet conversation with nature—an invitation to slow down, breathe deeply, and savor the essence of the land.
+        In the mountains of Yunnan, coffee is shaped by forest, mist, and time. At Laub, we serve a selection of Yunnan coffees, local pastries, and evening drinks - an invitation to slow down and taste the land, from morning to night.
       </p>
       <div class="hero-buttons">
         <a href="#menu" class="btn btn-primary">
-          <span>Begin the journey</span>
+          <span>See our menu</span>
           <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
         <a href="#contact" class="btn btn-outline">Find us</a>
@@ -45,7 +45,7 @@
       <h2 class="about-title">A coffee shop,<br>a dream,<br><i>the forest</i></h2>
       <div class="about-text">
         <p>
-          My name is Olivia. In 2026, I left Shanghai for Huimin Town and founded Laub Café—a place shaped by the mountains and a slower, more intentional way of living.
+          My name is Olivia. In 2026, I left Shanghai for Huimin Town and founded Laub Cafe — a quiet place shaped by the mountains and a slower rhythm of life.
         </p>
         <p>
           We work closely with local farmers whose families have cultivated coffee here for generations, guided by methods that are patient, natural, and deeply rooted in the land. Every bean carries the character of these mountains; every cup holds a trace of the forest.
@@ -66,7 +66,9 @@
       <span class="experience-label">The experience</span>
       <h2 class="experience-title">More than<br>just coffee</h2>
       <p class="experience-text">
-        Step into a place where time slows. Birdsong drifts through the trees, the wind moves gently through ancient branches, and the quiet ritual of coffee fills the air. Here, every cup becomes a moment of calm—an invitation to pause.
+        Step into a place where time slows. In the morning, coffee is brewed quietly as light moves through the trees.
+        By evening, the space softens—drinks are poured, conversations linger, and the forest settles into night.
+        Each moment is simple, and meant to be savored.
       </p>
 
       <div class="experience-stats">
@@ -138,15 +140,19 @@
     <h2 class="gallery-title">Gallery - The Coffee Shop</h2>
   </header>
 
-  <div class="gallery-grid">
-    <% gallery_items = [
-      {image: "gallery-1.jpg", alt: "Morning light", title: "Morning Glow", desc: "Embrace the first light of the day", large: true},
-      {image: "gallery-2.jpg", alt: "Pour-over coffee in cozy corner", title: "Your cozy corner", desc: "Relax, sip, and unwind"},
-      {image: "gallery-3.jpg", alt: "Forest seating", title: "Golden hour", desc: "Catch the sunset over the valley"},
-      {image: "gallery-4.jpg", alt: "Coffee beans", title: "Fresh harvest", desc: "Handpicked from local farms"},
-      {image: "gallery-5.jpg", alt: "Big window", title: "The view", desc: "Nature's masterpiece"},
-      {image: "gallery-6.jpg", alt: "Sunset", title: "Calm", desc: "A quiet moment in nature", large: true}
-    ] %>
+<div class="gallery-grid">
+  <% gallery_items = [
+    {image: "gallery-1.jpg", alt: "Morning light", title: "Morning Glow", desc: "Embrace the first light of the day", large: true},
+    {image: "gallery-2.jpg", alt: "Pour-over coffee in cozy corner", title: "Your Cozy Corner", desc: "Relax, sip, and unwind"},
+    {image: "gallery-3.jpg", alt: "Forest seating", title: "Golden Hour", desc: "Catch the sunset over the valley"},
+    {image: "gallery-4.jpg", alt: "Coffee beans", title: "Fresh Harvest", desc: "Handpicked from local farms"},
+    {image: "gallery-5.jpg", alt: "Big window", title: "The View", desc: "Nature's masterpiece"},
+    {image: "gallery-6.jpg", alt: "Sunset", title: "Calm", desc: "A quiet moment in nature", large: true},
+    {image: "gallery-7.jpg", alt: "Terrace seating", title: "Terrace Retreat", desc: "Sip coffee and relax in the sunshine with a view of the forest"},
+    {image: "gallery-8.jpg", alt: "Evening", title: "Evening drinks", desc: "Enjoy one of our coktails"},
+    {image: "gallery-9.jpg", alt: "Terrace view", title: "Afternoon Pause", desc: "Take a moment to rest, sip, and enjoy the forest from our terrace"},
+    {image: "gallery-10.jpg", alt: "Terrace panorama", title: "Forest Outlook", desc: "Breathe in the mountain air and the views from our terrace"}
+  ] %>
 
     <% gallery_items.each do |item| %>
       <figure class="gallery-item <%= 'gallery-item-large' if item[:large] %>">
@@ -166,7 +172,8 @@
     <div class="contact-info">
       <span class="contact-label">Visit us</span>
       <h2 class="contact-title">Find your way to Laub Cafe</h2>
-      <p class="contact-desc">Nestled within the ancient tea forests of Jingmai Mountain, Laub awaits. Come find us.</p>
+      <p class="contact-desc">Hidden within the tea forests of Jingmai Mountain, Laub is a place to pause.
+  Come for coffee, stay into the evening, and let the day slow down..</p>
 
       <div class="contact-details">
         <div class="contact-detail">
@@ -181,7 +188,7 @@
           <i class="fas fa-clock contact-icon"></i>
           <div>
             <h4>Hours</h4>
-            <p>Tuesday – Sunday: 7am – 6pm<br>Monday: Closed (forest hike day)</p>
+            <p>Tuesday – Sunday: 7am – 10pm<br></p>
           </div>
         </div>
 

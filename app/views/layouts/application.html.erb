@@ -31,12 +31,14 @@
         </button>
 
         <ul class="nav-menu" id="navMenu">
+          <li><%= link_to "中文", chinese_path %></li>
           <li><%= link_to "Home", root_path, class: ("active" if current_page?(root_path)) %></li>
           <li><a href="#about">The Story</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Visit</a></li>
+
         </ul>
       </div>
     </nav>

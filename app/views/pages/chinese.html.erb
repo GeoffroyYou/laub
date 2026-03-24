@@ -1,0 +1,216 @@
+<!-- HERO SECTION -->
+<section id="home" class="hero" aria-label="Hero Section">
+  <div class="hero-media">
+    <%= image_tag "sunset.JPG", alt: "日落时的森林树冠", class: "hero-image" %>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content container">
+    <div class="hero-text">
+      <span class="hero-sup">Laub 咖啡馆</span>
+      <h1 class="hero-title">
+        <span class="hero-title-line">在这里</span>
+        <span class="hero-title-line">森林 <i>生长</i></span>
+        <span class="hero-title-line">在每一杯咖啡里</span>
+      </h1>
+      <p class="hero-description">
+        在云南的群山中，咖啡由森林、雾气和时间塑造。在 Laub，我们提供精选云南咖啡、本地糕点及夜晚饮品——邀请你从早到晚慢下来，品味这片土地。
+      </p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">
+          <span>查看菜单</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline">联系我们</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll"><span class="scroll-line"></span></div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about container" aria-label="About Section">
+  <div class="about-grid">
+    <div class="about-image-container">
+      <div class="about-image-main">
+        <%= image_tag "Store.JPG", alt: "我们在森林里的小屋" %>
+      </div>
+      <div class="about-image-accent"></div>
+      <div class="about-image-accent2"></div>
+    </div>
+
+    <div class="about-content">
+      <span class="about-label">Olivia 的故事</span>
+      <h2 class="about-title">一家咖啡馆，<br>一个梦想，<br><i>一片森林</i></h2>
+      <div class="about-text">
+        <p>
+          我叫 Olivia。2026 年，我离开上海来到惠民镇，创办了 Laub 咖啡馆——一个被群山环绕、生活节奏缓慢的宁静之地。
+        </p>
+        <p>
+          我们与当地农户紧密合作，这些家庭世代种植咖啡，遵循耐心、自然、深植土地的方式。每一颗咖啡豆都承载着群山的性格，每一杯咖啡都保留着森林的气息。
+        </p>
+      </div>
+      <div class="about-signature">
+        <span class="signature-line"></span>
+        <span class="signature-text">Olivia · 创始人</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience" class="experience container" aria-label="Experience Section">
+  <div class="experience-grid">
+    <div class="experience-content">
+      <span class="experience-label">体验</span>
+      <h2 class="experience-title">不仅仅是<br>咖啡</h2>
+      <p class="experience-text">
+        走进一个时间放慢的空间。早晨，咖啡在阳光穿过树林时静静地冲泡。
+        到了傍晚，空间柔和——饮品被端上，谈话延续，森林慢慢进入夜晚。
+        每一刻都简单而值得细细品味。
+      </p>
+
+      <div class="experience-stats">
+        <div class="stat">
+          <span class="stat-number">40+</span>
+          <span class="stat-label">当地农户</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">可持续</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">2026</span>
+          <span class="stat-label">成立年份</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="experience-image">
+      <%= image_tag "experience.jpg", alt: "森林中的咖啡仪式" %>
+      <span class="experience-image-caption">晨间仪式</span>
+    </div>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section id="menu" class="menu container" aria-label="Menu Section">
+  <header class="menu-header">
+    <span class="menu-label">菜单</span>
+    <h2 class="menu-title">自然之作</h2>
+    <p class="menu-description">每一杯饮品都承载着云南雾气缭绕群山的精华。</p>
+  </header>
+
+  <div class="menu-grid">
+    <% menu_items = [
+      {name: "森林浓缩咖啡", price: "¥36", desc: "海拔 1500 米的云南单品咖啡豆。黑巧克力、野莓、雪松香气。", tag: "普洱产区", badge: "招牌", image: "espresso.jpg"},
+      {name: "晨间拿铁", price: "¥35", desc: "丝滑顺口，带有蜂蜜和杏仁香气。森林般的温柔唤醒。", tag: "店内推荐", image: "latte.jpg"},
+      {name: "树冠卡布奇诺", price: "¥25", desc: "丰富的奶泡与浓缩咖啡层次，如同头顶的森林树冠。", tag: "经典", image: "cappuccino.jpg"},
+      {name: "野莓摩卡", price: "¥30", desc: "黑巧克力搭配云南野生浆果，点缀肉桂。", tag: "季节限定", badge: "新品", image: "mocha.jpg"},
+      {name: "山地手冲", price: "¥42", desc: "手工冲泡，突显茉莉与金银花的细腻花香。", tag: "单品咖啡", badge: "匠心", image: "pour-over.jpg"},
+      {name: "森林冷萃", price: "¥38", desc: "慢浸 12 小时，顺滑巧克力感，无任何苦味。", tag: "清爽", image: "cold-brew.jpg"}
+    ] %>
+
+    <% menu_items.each do |item| %>
+      <article class="menu-card">
+        <div class="menu-card-image">
+          <%= image_tag item[:image], alt: "#{item[:name]} - #{item[:desc]}" %>
+          <% if item[:badge] %>
+            <span class="menu-card-badge"><%= item[:badge] %></span>
+          <% end %>
+        </div>
+        <div class="menu-card-content">
+          <div class="menu-card-header">
+            <h3 class="menu-card-name"><%= item[:name] %></h3>
+            <span class="menu-card-price"><%= item[:price] %></span>
+          </div>
+          <p class="menu-card-desc"><%= item[:desc] %></p>
+          <span class="menu-card-tag"><%= item[:tag] %></span>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="gallery container" aria-label="Gallery Section">
+  <header class="gallery-header">
+    <span class="gallery-label">时刻</span>
+    <h2 class="gallery-title">咖啡馆画廊</h2>
+  </header>
+
+  <div class="gallery-grid">
+    <% gallery_items = [
+      {image: "gallery-1.jpg", alt: "晨光", title: "晨光", desc: "迎接一天的第一缕光", large: true},
+      {image: "gallery-2.jpg", alt: "手冲咖啡在舒适角落", title: "你的舒适角落", desc: "放松，品味，享受"},
+      {image: "gallery-3.jpg", alt: "森林座位区", title: "金色时刻", desc: "在山谷中捕捉夕阳"},
+      {image: "gallery-4.jpg", alt: "咖啡豆", title: "新鲜采摘", desc: "来自本地农场的手工挑选"},
+      {image: "gallery-5.jpg", alt: "大窗户", title: "景致", desc: "大自然的杰作"},
+      {image: "gallery-6.jpg", alt: "日落", title: "宁静", desc: "自然中的片刻安宁", large: true},
+      {image: "gallery-7.jpg", alt: "露台座位", title: "露台休憩", desc: "在阳光下，享受森林美景的咖啡时光"},
+      {image: "gallery-8.jpg", alt: "傍晚", title: "晚间饮品", desc: "享用我们的鸡尾酒"},
+      {image: "gallery-9.jpg", alt: "露台景观", title: "午后小憩", desc: "在露台休息片刻，啜饮咖啡，享受森林"},
+      {image: "gallery-10.jpg", alt: "露台全景", title: "森林远眺", desc: "在露台呼吸山间空气，欣赏美景"}
+    ] %>
+
+    <% gallery_items.each do |item| %>
+      <figure class="gallery-item <%= 'gallery-item-large' if item[:large] %>">
+        <%= image_tag item[:image], alt: item[:alt] %>
+        <figcaption class="gallery-overlay">
+          <h3><%= item[:title] %></h3>
+          <p><%= item[:desc] %></p>
+        </figcaption>
+      </figure>
+    <% end %>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact container" aria-label="Contact Section">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <span class="contact-label">来访我们</span>
+      <h2 class="contact-title">找到 Laub 咖啡馆</h2>
+      <p class="contact-desc">
+        隐匿于景迈山茶林中，Laub 是一个可以停下脚步的地方。
+        来享受咖啡，待到傍晚，让一天慢下来。
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <i class="fas fa-map-pin contact-icon"></i>
+          <div>
+            <h4>地址</h4>
+            <p>澜沧拉祜族自治县，惠民镇，普洱市<br>云南，中国</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <i class="fas fa-clock contact-icon"></i>
+          <div>
+            <h4>营业时间</h4>
+            <p>周二 – 周日：早上 7 点 – 晚上 10 点</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <i class="fas fa-phone contact-icon"></i>
+          <div>
+            <h4>联系方式</h4>
+            <p>+86 (131) 1234-5678<br>info@laubcafe.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <%= form_with url: contact_path, method: :post, local: true do |f| %>
+        <%= f.text_field :name, placeholder: "你的名字", class: "form-input", required: true %>
+        <%= f.email_field :email, placeholder: "你的邮箱", class: "form-input", required: true %>
+        <%= f.text_area :message, placeholder: "你的留言", class: "form-input", rows: 4, required: true %>
+        <%= f.submit "发送留言", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</section>
