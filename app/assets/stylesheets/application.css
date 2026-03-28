@@ -1237,13 +1237,13 @@ h1, h2, h3, h4, h5 {
   100% { opacity: 0.3; height: 30px; }
 }
 
-/* =========================== RESPONSIVE DESIGN =========================== */
 /* =========================== RESPONSIVE GRID =========================== */
 
 /* Large screens */
 @media (max-width: 1200px) {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .gallery-grid {
@@ -1252,7 +1252,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .gallery-item {
-    aspect-ratio: 1; /* ensure all images are square and same size */
+    aspect-ratio: 1; /* square gallery images */
   }
 
   .footer-grid {
@@ -1290,6 +1290,7 @@ h1, h2, h3, h4, h5 {
 
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .gallery-grid {
@@ -1298,7 +1299,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .gallery-item {
-    grid-column: auto !important; /* remove any large item spanning */
+    grid-column: auto !important;
     aspect-ratio: 1;
   }
 }
@@ -1341,7 +1342,8 @@ h1, h2, h3, h4, h5 {
   }
 
   .menu-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 per row */
+    gap: 1rem;
   }
 
   .gallery-grid {
@@ -1377,8 +1379,18 @@ h1, h2, h3, h4, h5 {
     text-align: center;
   }
 
+  /* Menu images: show full cup, no cropping */
   .menu-card-image {
-    height: 220px;
+    width: 100%;
+    height: auto; /* natural height */
+    overflow: hidden;
+  }
+
+  .menu-card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* show full coffee cup */
+    object-position: center;
   }
 
   .menu-card-content {
@@ -1404,6 +1416,11 @@ h1, h2, h3, h4, h5 {
     font-size: 2rem;
   }
 
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 0.6rem;
@@ -1411,11 +1428,19 @@ h1, h2, h3, h4, h5 {
 
   .gallery-item {
     grid-column: auto !important;
-    aspect-ratio: 1; /* ensures square images */
+    aspect-ratio: 1;
   }
 
   .menu-card-image {
-    height: 180px;
+    width: 100%;
+    height: auto;
+  }
+
+  .menu-card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   .contact-form {
@@ -1426,4 +1451,19 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+/* Nav menu active state for mobile */
+.nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 31, 18, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem 0;
+  gap: 1rem;
+  text-align: center;
 }
