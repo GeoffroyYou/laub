@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   def contact_submit
   end
 
-
   def chinese
   end
 end

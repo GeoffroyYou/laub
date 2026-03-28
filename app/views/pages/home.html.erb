@@ -14,7 +14,7 @@
         <span class="hero-title-line">in every cup</span>
       </h1>
       <p class="hero-description">
-        In the mountains of Yunnan, coffee is shaped by forest, mist, and time. At Laub, we serve a selection of Yunnan coffees, local pastries, and evening drinks - an invitation to slow down and taste the land, from morning to night.
+        In Yunnan, coffee grows in harmony with the mountains, forests, and time. At Laub Cafe, we invite you to savor a selection of Yunnan coffees and evening drinks—a chance to slow down and taste the land, from sunrise to nightfall
       </p>
       <div class="hero-buttons">
         <a href="#menu" class="btn btn-primary">
@@ -45,7 +45,7 @@
       <h2 class="about-title">A coffee shop,<br>a dream,<br><i>the forest</i></h2>
       <div class="about-text">
         <p>
-          My name is Olivia. In 2026, I left Shanghai for Huimin Town and founded Laub Cafe — a quiet place shaped by the mountains and a slower rhythm of life.
+          My name is Olivia. In 2026, I left Shanghai for Huimin Town and founded Laub Cafe — a quiet place shaped by the mountains, the forests and a slower rhythm of life.
         </p>
         <p>
           We work closely with local farmers whose families have cultivated coffee here for generations, guided by methods that are patient, natural, and deeply rooted in the land. Every bean carries the character of these mountains; every cup holds a trace of the forest.
@@ -94,25 +94,67 @@
   </div>
 </section>
 
+
 <!-- MENU SECTION -->
 <section id="menu" class="menu container" aria-label="Menu Section">
   <header class="menu-header">
     <span class="menu-label">The menu</span>
-    <h2 class="menu-title">Crafted by nature</h2>
-    <p class="menu-description">Each drink carries the essence of Yunnan’s mist-covered mountains.</p>
+    <h2 class="menu-title">Coffee crafted by nature</h2>
   </header>
 
+  <!-- Coffee Subsection -->
+  <div class="menu-subsection">
+    <div class="menu-grid">
+      <% coffees = [
+        {name: "Forest Espresso", price: "¥36", desc: "Single origin Yunnan beans from 1,500m elevation. Dark chocolate, wild berries, hint of cedar.", tag: "Pu'er region", badge: "Signature", image: "espresso.jpg"},
+        {name: "Morning Latte", price: "¥35", desc: "Silky smooth with notes of honey and almond. A gentle forest awakening.", tag: "House favorite", image: "latte.jpg"},
+        {name: "Canopy Cappuccino", price: "¥25", desc: "Rich layers of foam and espresso, like the forest canopy above.", tag: "Classic", image: "cappuccino.jpg"},
+        {name: "Wild Berry Mocha", price: "¥30", desc: "Dark chocolate with foraged Yunnan berries and a touch of cinnamon.", tag: "Seasonal", badge: "New", image: "mocha.jpg"},
+        {name: "Mountain Pour Over", price: "¥42", desc: "Hand-brewed to highlight delicate floral notes of jasmine and honeysuckle.", tag: "Single origin", badge: "Artisan", image: "pour-over.jpg"},
+        {name: "Forest Cold Brew", price: "¥38", desc: "12-hour slow steeped. Smooth, chocolatey, with zero bitterness.", tag: "Refreshing", image: "cold-brew.jpg"},
+        {name: "Mountain Pour Over", price: "¥42", desc: "Hand-brewed to highlight delicate floral notes of jasmine and honeysuckle.", tag: "Single origin", badge: "Artisan", image: "pour-over.jpg"},
+        {name: "Forest Cold Brew", price: "¥38", desc: "12-hour slow steeped. Smooth, chocolatey, with zero bitterness.", tag: "Refreshing", image: "cold-brew.jpg"}
+      ] %>
+
+      <% coffees.each do |item| %>
+        <article class="menu-card">
+          <div class="menu-card-image">
+            <%= image_tag item[:image], alt: "#{item[:name]} - #{item[:desc]}" %>
+            <% if item[:badge] %>
+              <span class="menu-card-badge"><%= item[:badge] %></span>
+            <% end %>
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="menu-card-name"><%= item[:name] %></h3>
+              <span class="menu-card-price"><%= item[:price] %></span>
+            </div>
+            <p class="menu-card-desc"><%= item[:desc] %></p>
+            <span class="menu-card-tag"><%= item[:tag] %></span>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+
+<!-- Evening Cocktails Subsection -->
+ <header class="menu-header">
+    <h2 class="menu-title">- Evening drinks -</h2>
+<div class="menu-subsection">
   <div class="menu-grid">
-    <% menu_items = [
-      {name: "Forest Espresso", price: "¥36", desc: "Single origin Yunnan beans from 1,500m elevation. Dark chocolate, wild berries, hint of cedar.", tag: "Pu'er region", badge: "Signature", image: "espresso.jpg"},
-      {name: "Morning Latte", price: "¥35", desc: "Silky smooth with notes of honey and almond. A gentle forest awakening.", tag: "House favorite", image: "latte.jpg"},
-      {name: "Canopy Cappuccino", price: "¥25", desc: "Rich layers of foam and espresso, like the forest canopy above.", tag: "Classic", image: "cappuccino.jpg"},
-      {name: "Wild Berry Mocha", price: "¥30", desc: "Dark chocolate with foraged Yunnan berries and a touch of cinnamon.", tag: "Seasonal", badge: "New", image: "mocha.jpg"},
-      {name: "Mountain Pour Over", price: "¥42", desc: "Hand-brewed to highlight delicate floral notes of jasmine and honeysuckle.", tag: "Single origin", badge: "Artisan", image: "pour-over.jpg"},
-      {name: "Forest Cold Brew", price: "¥38", desc: "12-hour slow steeped. Smooth, chocolatey, with zero bitterness.", tag: "Refreshing", image: "cold-brew.jpg"}
+
+    <% cocktails = [
+      {name: "Yunnan Sunset", price: "¥48", desc: "Refreshing mix of local herbs, citrus, and premium spirits, capturing the warmth of Pu’er sunsets.", tag: "Signature", image: "drink1.jpg"},
+      {name: "Forest Martini", price: "¥52", desc: "Gin infused with forest botanicals, dry vermouth, and a twist of orange, evoking the mountain woodlands.", tag: "Classic", image: "drink2.jpg"},
+      {name: "Mountain Old Fashioned", price: "¥55", desc: "Whiskey aged with local spices, sweetened with honey syrup, with a hint of smoked tea.", tag: "Artisan", badge: "New", image: "drink3.jpg"},
+      {name: "Pu’er Blossom", price: "¥50", desc: "Floral liqueur with jasmine tea, lychee, and sparkling water, delicate and fragrant.", tag: "Floral", image: "drink4.jpg"},
+      {name: "Wild Tea Mojito", price: "¥53", desc: "Rum, fresh mint, lime, and locally grown Pu’er tea leaves for a twist on the classic mojito.", tag: "Refreshing", image: "drink5.jpg"},
+      {name: "Cloudy Peak Sour", price: "¥56", desc: "Egg white, citrus, and mountain herb syrup shaken over bourbon, silky and aromatic.", tag: "Sour", image: "drink6.jpg"},
+      {name: "Golden Leaf Negroni", price: "¥58", desc: "Campari, sweet vermouth, and local tea-infused gin, deep amber with subtle earthy notes.", tag: "Bitter", image: "drink7.jpg"},
+      {name: "Tropical Yunnan Mule", price: "¥54", desc: "Vodka, ginger beer, pineapple, and a hint of local citrus, vibrant and zesty.", tag: "Exotic", image: "drink8.jpg"}
     ] %>
 
-    <% menu_items.each do |item| %>
+    <% cocktails.each do |item| %>
       <article class="menu-card">
         <div class="menu-card-image">
           <%= image_tag item[:image], alt: "#{item[:name]} - #{item[:desc]}" %>
@@ -131,7 +173,8 @@
       </article>
     <% end %>
   </div>
-</section>
+</div>
+
 
 <!-- GALLERY SECTION -->
 <section id="gallery" class="gallery container" aria-label="Gallery Section">
@@ -202,13 +245,16 @@
       </div>
     </div>
 
-    <div class="contact-form">
-      <%= form_with url: contact_path, method: :post, local: true do |f| %>
-        <%= f.text_field :name, placeholder: "Your name", class: "form-input", required: true %>
-        <%= f.email_field :email, placeholder: "Your email", class: "form-input", required: true %>
-        <%= f.text_area :message, placeholder: "Your message", class: "form-input", rows: 4, required: true %>
-        <%= f.submit "Send message", class: "btn btn-primary" %>
-      <% end %>
+<div class="contact-form wechat-box">
+  <div class="wechat-content">
+    <h3 class="wechat-title">Contact us on WeChat</h3>
+    <p class="wechat-desc">Scan the QR code to connect instantly</p>
+
+    <div class="wechat-qr">
+      <%= image_tag "wechat-qr.jpg", alt: "WeChat QR Code" %>
     </div>
+
+
   </div>
+</div>
 </section>

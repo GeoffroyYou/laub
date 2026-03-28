@@ -658,7 +658,7 @@ h1, h2, h3, h4, h5 {
   color: var(--white);
 }
 
-/* =========================== MENU SECTION - FIXED =========================== */
+/* =========================== MENU SECTION =========================== */
 .menu-header {
   text-align: center;
   margin-bottom: var(--space-xl);
@@ -708,7 +708,14 @@ h1, h2, h3, h4, h5 {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
 }
+
+
+.menu-grid, .gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 
 .menu-card {
   background: var(--white);
@@ -726,11 +733,11 @@ h1, h2, h3, h4, h5 {
   box-shadow: var(--shadow-xl);
 }
 
-/* Fixed image container - ensures full image display */
+
 .menu-card-image {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 350px;
   overflow: hidden;
 }
 
@@ -795,6 +802,7 @@ h1, h2, h3, h4, h5 {
   line-height: 1.6;
   margin-bottom: 0.8rem;
   flex: 1;
+  text-align: justify;
 }
 
 .menu-card-tag {
@@ -817,6 +825,7 @@ h1, h2, h3, h4, h5 {
 .gallery-header {
   text-align: center;
   margin-bottom: var(--space-xl);
+  margin-top: var(--space-xl);
 }
 
 .gallery-label {
@@ -847,6 +856,7 @@ h1, h2, h3, h4, h5 {
 .gallery-title {
   font-size: var(--text-4xl);
   color: var(--forest-black);
+
 }
 
 .gallery-grid {
@@ -949,11 +959,13 @@ h1, h2, h3, h4, h5 {
   line-height: 1.7;
   margin-bottom: 2rem;
   margin-left: 1rem;
+  text-align: justify;
 }
 
 .contact-details {
   margin-top: 1.5rem;
   margin-left: 1rem;
+  text-align: justify;
 }
 
 .contact-detail {
@@ -995,39 +1007,49 @@ h1, h2, h3, h4, h5 {
   line-height: 1.5;
 }
 
-.contact-form {
-  background: var(--white);
-  padding: 2.5rem;
-  border-radius: 30px;
-  box-shadow: var(--shadow-xl);
-  margin-right: 1rem;
+
+.wechat-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.contact-form .form-input {
+.wechat-content {
   width: 100%;
-  padding: 0.8rem 0;
-  border: none;
-  border-bottom: 1px solid var(--forest-mist);
+}
+
+.wechat-title {
+  font-size: var(--text-xl);
+  color: var(--forest-black);
+  margin-top:2rem;
+}
+
+.wechat-desc {
   font-size: var(--text-sm);
-  transition: all 0.3s ease;
-  background: transparent;
+  opacity: 0.7;
   margin-bottom: 1.5rem;
 }
 
-.contact-form .form-input:focus {
-  outline: none;
-  border-bottom-color: var(--clay);
-}
-
-.contact-form textarea.form-input {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.contact-form .btn {
-  width: 100%;
-  margin-top: 1rem;
+.wechat-qr {
+  display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.wechat-qr img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  background: white;
+  padding: 0.5rem;
+}
+
+.wechat-id {
+  font-size: var(--text-xs);
+  color: var(--forest-moss);
 }
 
 /* =========================== FOOTER - COMPACT =========================== */
@@ -1191,6 +1213,8 @@ h1, h2, h3, h4, h5 {
   color: var(--clay);
 }
 
+
+
 /* =========================== ANIMATIONS =========================== */
 @keyframes slowZoom {
   0% { transform: scale(1); }
@@ -1214,13 +1238,21 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================== RESPONSIVE DESIGN =========================== */
+/* =========================== RESPONSIVE GRID =========================== */
+
+/* Large screens */
 @media (max-width: 1200px) {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 1; /* ensure all images are square and same size */
   }
 
   .footer-grid {
@@ -1233,6 +1265,7 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* Medium screens */
 @media (max-width: 992px) {
   .about-grid,
   .experience-grid,
@@ -1261,13 +1294,16 @@ h1, h2, h3, h4, h5 {
 
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
-  .gallery-item-large {
-    grid-column: span 2;
+  .gallery-item {
+    grid-column: auto !important; /* remove any large item spanning */
+    aspect-ratio: 1;
   }
 }
 
+/* Small screens */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -1310,6 +1346,12 @@ h1, h2, h3, h4, h5 {
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .gallery-item {
+    grid-column: auto !important;
+    aspect-ratio: 1;
   }
 
   .footer-grid {
@@ -1334,8 +1376,17 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     text-align: center;
   }
+
+  .menu-card-image {
+    height: 220px;
+  }
+
+  .menu-card-content {
+    padding: 1rem;
+  }
 }
 
+/* Extra small screens */
 @media (max-width: 480px) {
   .container {
     padding: 0 1.2rem;
@@ -1355,11 +1406,16 @@ h1, h2, h3, h4, h5 {
 
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
-  .gallery-item-large {
-    grid-column: span 1;
-    aspect-ratio: 1;
+  .gallery-item {
+    grid-column: auto !important;
+    aspect-ratio: 1; /* ensures square images */
+  }
+
+  .menu-card-image {
+    height: 180px;
   }
 
   .contact-form {
@@ -1370,66 +1426,4 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     gap: 0.5rem;
   }
-}
-
-.nav-menu.active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: rgba(15, 31, 18, 0.95);
-  backdrop-filter: blur(12px);
-  padding: 1.5rem 0;
-  gap: 1.2rem;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .menu-card-image {
-    height: 220px;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu-card-image {
-    height: 180px;
-  }
-}
-
-.menu-card-image img {
-  object-fit: cover;
-  object-position: center;
-}
-
-@media (max-width: 768px) {
-  .menu-card-content {
-    padding: 1rem;
-  }
-}
-
-.container {
-  max-width: 1200px;
-  width: 90%;
-}
-
-.hero {
-  height: clamp(500px, 70vh, 800px);
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-}
-
-.about-title, .experience-title, .menu-title, .gallery-title {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-}
-
-.menu-grid, .gallery-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-section {
-  padding: clamp(2rem, 5vw, 6rem) 0;
 }
