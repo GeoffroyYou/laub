@@ -517,7 +517,8 @@ h1, h2, h3, h4, h5 {
   opacity: 0.8;
   line-height: 1.8;
   font-size: var(--text-base);
-  text-align: justify;
+  text-align: left;
+
 }
 
 /* Elegant first letter drop cap */
@@ -787,6 +788,7 @@ h1, h2, h3, h4, h5 {
 
 .menu-card-tag {
   display: inline-block;
+  max-width: 130px;
   background: var(--forest-mist);
   color: var(--forest-deep);
   padding: 0.2rem 0.8rem;
@@ -795,6 +797,7 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 0.5rem; /* replaces align-self */
+  text-align: left;
 }
 
 .menu-card-badge {
@@ -1183,86 +1186,42 @@ h1, h2, h3, h4, h5 {
 
 /* =========================== RESPONSIVE GRID =========================== */
 
+/* Menu Grid - mobile screens */
 
-/* Large screens */
-@media (max-width: 1200px) {
+@media (max-width: 1200px),  /* large tablets */
+       (max-width: 992px),   /* tablets */
+       (max-width: 768px),   /* mobile phones */
+       (max-width: 480px) {  /* very small phones */
+
   .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .gallery-item-large {
-    grid-column: span 2;
-  }
-}
-
-/* Medium screens */
-@media (max-width: 992px) {
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
-  }
-
-  .gallery-item-large {
-    grid-column: span 2;
-  }
-}
-
-/* Small screens */
-@media (max-width: 768px) {
-  .menu-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: repeat(2, 1fr); /* 2 photos per row */
     gap: 1rem;
   }
 
   .menu-card-image {
-    height: auto; /* Show full image */
+    height: auto;        /* remove fixed desktop height */
+    padding-top: 100%;    /* shorter photos */
   }
 
   .menu-card-image img {
-    height: auto;
-    object-fit: contain;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr; /* Single column for gallery */
-    gap: 0.6rem;
-  }
-
-  .gallery-item-large {
-    grid-column: auto;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-  .menu-grid {
-    gap: 0.8rem;
-  }
-
-  .gallery-grid {
-    gap: 0.5rem;
-  }
-
-  .menu-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
   }
 }
 
 
+ .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 photos per row */
+    gap: 0.5rem; /* space between photos */
+  }
+
+}
 /* Nav menu active state for mobile */
+
 .nav-menu.active {
   display: flex;
   flex-direction: column;
@@ -1276,9 +1235,24 @@ h1, h2, h3, h4, h5 {
   gap: 1rem;
   text-align: center;
 }
+
+
 /* Small screens */
 @media (max-width: 768px) {
-  /* HERO SECTION */
+  /* about SECTION */
+
+
+ .about-grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: var(--space-lg);
+  }
+
+ .about-image {
+    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+    aspect-ratio: auto; /* let image adjust naturally */
+  }
 
 
   /* EXPERIENCE SECTION */
@@ -1298,7 +1272,9 @@ h1, h2, h3, h4, h5 {
     padding: 1rem;
   }
 }
- RESPONSIVE FIX */
+
+<----RESPONSIVE NAV---->
+
 .nav {
   position: fixed;
   top: 0;
@@ -1401,33 +1377,15 @@ h1, h2, h3, h4, h5 {
 }
 
 
-@media (max-width: 992px) {
-  .about-grid {
-    grid-template-columns: 1fr; /* single column */
-    grid-template-rows: auto auto; /* image + content stacked */
-    gap: var(--space-lg);
-  }
 
-  .about-image-container,
-  .about-content {
-    max-width: 100%;
-    margin: 0 auto; /* center both */
-  }
 
-  .about-image-container {
-    order: -1; /* put image first if you want image on top */
-  }
-
-  .about-content {
-    padding-left: 0; /* remove side padding for small screens */
-  }
-}
 /* =========================== CONTACT SECTION MOBILE =========================== */
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr; /* 1 column */
     grid-template-rows: auto auto; /* 2 rows */
     gap: var(--space-lg);
+    margin-right: 10px;
   }
 }
 
